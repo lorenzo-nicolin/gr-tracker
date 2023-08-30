@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'name_of_vehicle', // Add any other fillable properties here
+        // Other fillable properties go here
+    ];
+
 }

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Vehicles;
+use App\Models\Vehicle;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('vehicle/',[Vehicles::class,'index']);
+// Route::get('vehicle/create',[Vehicles::class,'create']);
+// Route::post('vehicle/',[Vehicles::class,'store']);
+// Route::get('vehicle', [Vehicles::class,'index']);
+
+Route::resource('vehicle', Vehicles::class);
