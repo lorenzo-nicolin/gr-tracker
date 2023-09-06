@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Vehicles;
+use App\Http\Controllers\driverController;
 use App\Models\Vehicle;
 
 /*
@@ -26,3 +27,4 @@ use App\Models\Vehicle;
 // Route::get('vehicle', [Vehicles::class,'index']);
 
 Route::resource('vehicle', Vehicles::class);
+Route::resource('driver', driverController::class);
