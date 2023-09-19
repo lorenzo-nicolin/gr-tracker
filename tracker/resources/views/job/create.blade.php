@@ -19,9 +19,24 @@
 
         <br>
         <label for="origin">
-        Origin :
+        Select Driver :
             <br>
-            <input type="text" name="origin">
+            <!-- <input type="text" name="driv"> -->
+
+            <select name="" class="form-select" id="">
+
+            </select>
+        </label>
+
+        <br>
+        <label for="origin">
+        Select Driver :
+            <br>
+            <!-- <input type="text" name="driv"> -->
+
+            <select name="" class="form-select" id="">
+                
+            </select>
         </label>
 
         <div>

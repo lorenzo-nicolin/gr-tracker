@@ -56,7 +56,7 @@ class driverController extends Controller
 
         Session::flash('success', 'Post saved successfully!');
 
-        return redirect('vehicle'); // Redirect to the appropriate route
+        return redirect('driver'); // Redirect to the appropriate route
     }
 
     /**
@@ -97,13 +97,13 @@ class driverController extends Controller
     {
         //
 
-        $vehicle = Driver::find($id);
+        $data = Driver::find($id);
 
        
-        $vehicle->driver_name = $request->input('driver_name');
-        $vehicle->driver_cell = $request->input('driver_cell');
+        $data->driver_name = $request->input('driver_name');
+        $data->driver_cell = $request->input('driver_cell');
 
-        $vehicle->update();
+        $data->update();
         Session::flash('success', 'Driver updated successfully!');
         return redirect('driver');
     }
