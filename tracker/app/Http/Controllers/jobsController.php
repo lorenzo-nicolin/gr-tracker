@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vehicle;
+use App\Models\Driver;
+
 
 class jobsController extends Controller
 {
@@ -14,6 +17,16 @@ class jobsController extends Controller
     public function index()
     {
         //
+
+        $vehicles = Vehicle::all();
+        $driver = Driver::all();
+
+        //return view->with(compact('persons', 'ms'));
+
+        return view('job.create', compact('vehicles','driver'));
+
+
+
     }
 
     /**
