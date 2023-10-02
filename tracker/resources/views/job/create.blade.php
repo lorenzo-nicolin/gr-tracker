@@ -8,7 +8,7 @@
 
 ?>
 <div>
-    <form method="POST" action="/vehicle">
+    <form method="POST" action="/jobs">
         @csrf
         <label for="destination">
             Destination :
@@ -55,6 +55,23 @@
                 <option value="{{$vehicle->id}}">{{$vehicle->name_of_vehile}}</option>
 
                 @endforeach
+            </select>
+
+        </label>
+
+        <label for="origin">
+            Select Status :
+            <br>
+            <!-- <input type="text" name="driv"> -->
+
+            <select name="job_status" class="form-select" id="job_status">
+
+                @foreach ($job_status as $job_status)
+
+                <option value="{{$job_status->id}}">{{$job_status->status_name}}</option>
+
+                @endforeach
+            </select>
 
         </label>
 

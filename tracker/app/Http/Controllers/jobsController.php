@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use App\Models\Driver;
+use App\Models\Job;
+use App\Models\job_status_table;
+use Illuminate\Support\Facades\Session;
+
 
 
 class jobsController extends Controller
@@ -20,10 +24,11 @@ class jobsController extends Controller
 
         $vehicles = Vehicle::all();
         $driver = Driver::all();
+        $job_status = job_status_table::all();
 
         //return view->with(compact('persons', 'ms'));
 
-        return view('job.create', compact('vehicles','driver'));
+        return view('job.create', compact('vehicles','driver','job_status'));
 
 
 
@@ -50,6 +55,17 @@ class jobsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $data = new Job();
+
+        $data->destination = $request->input('destination');
+        $data->current_location = $request->input('current_location');
+
+        $data->save();
+
+        Session::flash('success', 'Post saved successfully!');
+
+        return redirect('jobs'); // Redirect to the appropriate route
     }
 
     /**
